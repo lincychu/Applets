@@ -1,0 +1,121 @@
+<view class="details">
+  <view class="details-header">
+    <view class="header-info">
+      <view style="font-size: 1em">{{info.name}}</view>
+      <view class="details-price">
+        <star star="{{info.star}}"></star>
+        <text>￥{{info.price}}/每人</text>
+      </view>
+      <view class="details-address">
+        <image src="{{addressIcon}}" class="address-icon" mode='widthFix'/>
+        <text>{{info.address}}</text>
+      </view>
+    </view>
+    <image src="{{info.img}}" class="detail-img" mode="widthFix" />
+  </view>
+   <view class="menu">
+    <view class="menus">
+      <block wx:for="{{menuArr}}" wx:key="key">
+        <text class="default" data-index="{{index}}" bindtap='toggleMenu'>{{item}}</text>
+      </block>
+    </view>
+    <text class="actived" style="left: {{left}}"></text>
+  </view> 
+  <view class="order" wx:if="{{menuActive === 0}}">
+    <view class="sider-menu-container">
+      <view class="sider-menu">
+        <block wx:for="{{list}}" wx:key="key">
+          <text class="side-item side-item-active" wx:if="{{listIndex === index}}">{{item.name}}</text>
+          <text class="side-item" data-index="{{index}}" data-sider="{{index}}" bindtap='toggleSiderMenu' wx:else>{{item.name}}</text>
+        </block>
+      </view>
+      <text class="sider-actived" style="top: {{top}}"></text>
+    </view>
+    <view class="sider-list">
+      <view class="sider-list-title">{{list[listIndex].name}}</view>
+      <view class="sider-list-container">
+        <block wx:for="{{list[listIndex].childList}}" wx:key="key">
+            <view class="sider-list-content">
+              <image class="content-img" src="{{list[listIndex].childList[0].img}}" mode='widthFix'/>
+              <view class="right-content">
+                <view>{{item.name}}</view>
+                <view class="content-laud">月售 {{item.sum}} 赞 {{item.laud}}</view>
+                <view class="operation-container">
+                  <view class="curr-price">￥ {{item.price}}</view>
+                  <view class="operation">
+                    <image src="{{lessImg}}" class="opImg" data-min="{{index}}" mode="widthFix" bindtap="minus" />
+                    <text>{{item.num}}</text>
+                    <image src="{{addImg}}" class="opImg" data-add="{{index}}" mode="widthFix" bindtap='add'/>
+                  </view>
+                </view>
+              </view>
+            </view>  
+          </block>  
+      </view>
+    </view>
+    <view class="bottom-account">
+      <view class="account-container">
+        <view class="cart cart-active" wx:if="{{total > 0}}">
+          <image class="cartImg" src="{{shoppingCartImg}}" mode="widthFix"/>
+        </view>
+        <view class="cart" wx:else>
+          <image class="cartImg" src="{{shoppingCartImg}}" mode="widthFix"/>
+        </view>
+      </view>
+      <view class="account-pay-box">
+        <view class="account-pay">
+          <text class="total">￥{{total}}</text>
+          <button type="primary" size="{{primarySize}}" class="payfor" plain="{{plain}}"
+        disabled="{{total === 0}}" bindtap="payfor">去结算</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="order" wx:if="{{menuActive === 1}}">
+    <view class="comments">
+      <block wx:for="{{commentsList}}" wx:key="key">
+        <view class="comments-item">
+          <image src="{{item.userImg}}" class="userImg" mode='widthFix' />
+          <view class="comments-main">
+            <view class="userName">{{item.userName}}</view>
+            <view class="starAndDate">
+              <star star="{{item.starNum}}" showScore="{{false}}"/>
+              <text>{{item.date}}</text>
+            </view>
+            <view class="comment">{{item.comment}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="order" wx:if="{{menuActive === 2}}">
+    <view class="shopInfo">
+      <text class="shopInfo-title">商家信息</text>
+      <view class="shopInfo-main">
+        <text class="shopInfo-pa">牌</text>
+        <view class="shopInfo-about">
+          <text>品牌故事-</text>
+          <text>好友聚集圣地</text>
+        </view>
+      </view>
+      <view class="service">
+        <text>餐厅服务</text>
+        <view class="service-container">  
+          <block wx:for="{{service}}" wx:key="key">
+            <view class="service-item">
+              <image src="{{item.img}}" class="service-img" mode="widthFix"/>
+              <text>{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="service">
+        <text>营业时间</text>
+        <view class="service-container">  
+          周一至周六 07:30-23:00
+        </view>
+      </view>
+    </view>
+  </view>
+  <loading show="{{loading}}"/>
+</view>

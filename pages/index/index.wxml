@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="container">
+   <swiper class='banner' 
+    autoplay='{{autoplay}}' 
+    interval='{{interval}}' 
+    duration='{{duration}}' 
+    indicator-dots="{{indicatorDots}}"
+    indicator-color="{{indicatorColor}}"
+    indicator-active-color="{{indicatorActiveColor}}"
+    circular="{{circular}}"
+    bindchange='switchTab'>
+    <block wx:for="{{sliderList}}" wx:key="key">
+      <swiper-item>
+        <image src="{{item.imageSource}}" class="banner-item"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="hot-box">
+    <view class="hot">
+      <view class="hot-title">
+        <text class="tips"></text>
+        <text class="hot-words">热点</text>
+      </view>
+      <text class="more">更多</text>
+    </view>
+    <view class="hot-content">
+      <view class="hot-content-item">
+        <view class="item-header">
+          <text>推荐编辑|第</text>
+          <text style="color: red; padding: 0 3px;">{{hot.periods}}</text>
+          <text>期</text>
+        </view>
+        <view class="item-keyWords">
+          <text>{{hot.keyWords}}</text>
+        </view>    
+      </view>
+    </view>
+  </view>
+  <view class="find-box">
+    <view class="find">
+      <view class="find-title">
+        <text class="tips"></text>
+        <text class="find-words">发现</text>
+      </view>
+      <text class="more">更多</text>
+    </view>
+    <view class="find-content">
+      <text class="find-content-title">今晚我有空 | 豆瓣9.2的《白鹿原》复播，能否成为今年国产剧最佳？</text>
+      <text class="find-content-tips">停播一个月《白鹿原》终于回归，豆瓣9.2的高分能否得以保持？最值得推荐的影视内容，都在这里了！</text>
+    </view>
+    <view class="find-content-footer">
+      <text>by豆瓣</text>
+      <text>来自今晚我有空</text>
+    </view>
+  </view>
+  <view class="videos-box">
+    <view class="videos">
+      <view class="videos-title">
+        <text class="tips"></text>
+        <text class="videos-words">正在热映</text>
+      </view>
+    </view>
+    <view class="hotMovie">
+      <block wx:for="{{hotMovie}}" wx:key="key">
+        <image src="{{item}}" mode="widthFix" rel="nofollow" class="hot-movie"/>
+      </block>
+    </view>
+  </view>
+  <loading show="{{loading}}"/>
+</view>

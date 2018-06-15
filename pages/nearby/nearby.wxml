@@ -1,0 +1,51 @@
+<view class="nearby">
+  <swiper class='banner' 
+      autoplay='{{autoplay}}' 
+      interval='{{interval}}' 
+      duration='{{duration}}' 
+      indicator-dots="{{indicatorDots}}"
+      indicator-color="{{indicatorColor}}"
+      indicator-active-color="{{indicatorActiveColor}}"
+      circular="{{circular}}"
+      bindchange='switchTab'>
+      <block wx:for="{{sliderList}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item.imageSource}}" class="banner-item" mode="widthFix"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <swiper class="section icons" indicator-dots="true" autoplay="" interval="" duration="500" 
+    indicator-active-color="{{indicatorActiveColor}}"
+    indicator-color="rgba(0, 0, 0, 0.3)">
+			<swiper-item wx:for="{{icons}}" wx:for-item="list" wx:key="id">
+				<view class="icon" wx:for="{{list}}" wx:for-item="icon" wx:key="id" bindtap="toNearby">
+					<image src="{{icon.img}}"/>
+					<text>{{icon.name}}</text>
+				</view>
+			</swiper-item>
+		</swiper>
+    <view class="youLike">
+      <text class="like-text">猜您喜欢</text>
+    </view>
+    <view>
+      <block wx:for="{{likeList}}" wx:key="key" wx:item="item">
+        <view class="likeListBox" data-info="{{item}}" key='{key}' bindtap='gotoDetail'>
+          <view class="imageAndRank">
+            <image src="{{item.img}}" class="like-img" mode="widthFix"/>
+            <text class="rank">{{item.rank}}</text>
+          </view>
+          <view class="itemContent">
+            <view class="contentTitle">{{item.name}}</view>
+            <view class="starComponent">
+              <star star="{{item.star}}"></star>
+              <text class="contentComment">{{item.comment}}评论</text>
+            </view>
+            <view class="address">{{item.address}}</view>
+            <view class="price">人均￥{{item.price}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+  <loading show="{{loading}}"/>  
+</view>

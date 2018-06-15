@@ -1,0 +1,27 @@
+<view class="mine-box">
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class='tips'>
+    <view class="no-container">
+      <image src="{{notification}}" class="notification" mode="widthFix"/>
+      <text class="notification-text0">提醒</text>
+    </view>
+    <image src="{{nextStep}}" mode="widthFix" class="nextStep"/>
+  </view>
+  <view class="no-text-box">
+    <text class='notification-text'>暂无新提醒</text>
+  </view>
+  <block wx:for="{{list}}" wx:key="key">
+    <view class="list-container">
+      <block wx:for="{{item}}" wx:key="key">
+        <view class="list-item">
+          <image src="{{item.icon}}" mode="widthFix" class="item-img"/>
+          <text>{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+  <loading show="{{loading}}"/>
+</view>

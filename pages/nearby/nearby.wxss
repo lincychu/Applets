@@ -1,0 +1,141 @@
+.nearby{
+  width: 100vw;
+}
+.banner{
+  width: 100vw;
+  height: 41.6666666vw;
+}
+.banner-item{
+  width: 100%;
+  height: 100%;
+}
+.section{
+  background: #ffffff;
+}
+.icons {
+	height: 370rpx;
+	padding: 20rpx 10rpx;
+	padding-bottom: 0;
+}
+.icons swiper-item {
+	width: 100%;
+	/*display: -webkit-flex;*/
+	/*flex-direction: row;*/
+	/*flex-wrap: wrap;*/
+	/*justify-content: center;*/
+}
+.icons .icon {
+	float: left;
+	display: -webkit-flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 25%;
+	text-align: center;
+	margin: 10rpx 0;
+}
+.icons .icon image {
+	margin: 0 auto;
+	width: 100rpx;
+	height: 100rpx;
+  border-radius: 100rpx;
+}
+.icons .icon text {
+	color: #000;
+	font-size: 24rpx;
+	line-height: 2;
+}
+.youLike{
+  width: 100vw;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  background: #fff;
+  border-top: 3px solid #eee;
+  border-bottom: 1px solid #eee;
+  color: #aaa;
+}
+.like-img{
+  width: 280rpx;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.like-text{
+  padding: 5px 0;
+  color: deepskyblue;
+  position: relative;
+}
+.like-text::before{
+  position: absolute;
+  display: block;
+  content: '';
+  background: deepskyblue;
+  width: 1em;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  margin-top: -0.5px;
+  left: -1.5em;
+}
+.like-text::after{
+  position: absolute;
+  display: block;
+  content: '';
+  background: deepskyblue;
+  width: 1em;
+  height: 1px;
+  top: 50%;
+  margin-top: -0.5px;
+  right: -1.5em;
+}
+.choice{
+  width: 100vw;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  background: #fff;
+  border-top: 3px solid #eee;
+}
+.likeListBox{
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  padding:15px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.likeListBox:last-child{
+  border: none;
+}
+.imageAndRank{
+  position: relative;
+}
+.rank{
+  width: 28px;
+  padding: 1.5px 0;
+  background: #FB6433;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: -3px;
+  color: #fff;
+  text-align: center;
+  font-size: 0.7em;
+}
+.itemContent{
+  margin-left: 10px;
+  font-size: 0.8em;
+  color: #666;
+}
+.contentTitle{
+  font-weight: bold;
+}
+.contentComment{
+  color: #f60;
+}
+.contentTitle, .starComponent, .address{
+  margin-bottom: 3px;
+}

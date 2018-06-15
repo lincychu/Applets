@@ -1,0 +1,44 @@
+<view class="curLocation">
+    <view>
+      <text>当前位置：</text>
+      <text class="location" wx:if='{{city}}'>{{city}}</text>
+      <text class="location" wx:else>定位中...</text>
+    </view>
+    <view class='changeLocation' bindtap='getLocation'>
+      <image src='{{locationIcon}}' class="icon"/>重新定位
+    </view>
+  </view>
+  <view class="weatherwrap {{actived ? 'weatherwrapActive': ''}}" bindtouchstart='toggleCard'>
+    <view class="flipper {{actived ? 'toggle': ''}}">
+      <view class="info">
+        <view class="city">{{city}} ({{today}})</view>
+        <view class="temp">{{now.date}}</view>
+        <view class="weather">
+          <view>{{now.temperature}}</view>
+          <view>
+            <image src="{{now.dayPictureUrl}}" class="weatherIcon" mode="widthFix" />
+            <image src="{{now.nightPictureUrl}}" class="weatherIcon" mode="widthFix" />
+          </view>
+          <view>PM2.5: {{now.pm25}}</view>
+        </view>
+        <view class="wind">{{now.wind}}</view>
+      </view>
+
+      <view class="nextWeather">
+        <view class="forecast">
+          <block wx:for="{{forecast}}" wx:for-index="index" wx:for-item="fc" wx:key="key">
+            <view class="castItem">
+              <view class="castDay">{{fc.date}}</view>
+              <view>
+                <image src="{{fc.dayPictureUrl}}" class="weatherIcon" mode="widthFix" />
+                <image src="{{fc.nightPictureUrl}}" class="weatherIcon" mode="widthFix" />
+              </view>
+              <view class="castTmp">{{fc.temperature}}</view>
+              <view class="castTmp">{{fc.weather}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <loading show="{{loading}}"/>

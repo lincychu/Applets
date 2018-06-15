@@ -1,0 +1,8 @@
+.start-container{
+  display: inline-block;
+  margin-right: 5px;
+}
+.star-image{
+  width: 30rpx;
+  height: 30rpx;
+}

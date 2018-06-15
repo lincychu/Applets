@@ -1,0 +1,7 @@
+<view class="start-container">
+  <block wx:for="{{stars}}" wx:key="key">
+    <image class="star-image" key="{{key}}"  style="left: {{item*150}}rpx" src="{{star > item ?(star-item == 0.5? halfSrc: selectedSrc) : normalSrc}}">
+    </image>
+  </block>
+  <text style="margin-left: 3px;" wx:if="{{showScore===true}}">{{star}}分</text>
+</view>

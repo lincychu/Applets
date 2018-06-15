@@ -1,0 +1,117 @@
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: deepskyblue;
+}
+.curLocation{
+  margin: 10px 0;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.location{
+  border: 1px solid deepskyblue;
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: deepskyblue;
+  max-width: 10em;
+  overflow: hidden;
+}
+.changeLocation{
+  margin-left: 10px; 
+  display: inline-flex;
+  border: 1px solid deepskyblue;
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: deepskyblue;
+  box-sizing: padding-box;
+}
+.changeLocation .icon{
+  margin: 0.2em 0.3em 0 0;
+  width: 1em;
+  height: 1em;
+}
+.weatherwrap{
+  margin: 0 3vw;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.3);
+  background: #2a579a;
+  color: #fff;
+  perspective: 1000;
+  position: relative;
+  height: 180px;
+  transition: all 0.8s;
+  overflow: hidden;
+}
+.weatherwrapActive{
+  background: deepskyblue;
+}
+.flipper{
+  margin: 2vw 2vw;
+  height: 180px;
+  transition: all 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  text-align: left;
+  box-sizing: padding-box;
+}
+.toggle{
+  transform: rotateY(-180deg);
+}
+.info, .nextWeather{
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: padding-box;
+}
+.nextWeather{
+  transform: rotateY(180deg);
+}
+.city{
+  padding: 8px 0 5px 0;
+  border-bottom: 1px solid #fff;
+}
+.temp{
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+.weather{
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  padding: 6px 5px;
+}
+.wind{
+  padding: 5px 0;
+  text-align: center;
+}
+.weatherIcon{
+  width: 2em;
+}
+.weatherIcon:last-child{
+  margin-left: 5px;
+}
+.castItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 60px;
+}
+.typeImg{
+  width: 1.5em;
+  height: 1.5em;
+}

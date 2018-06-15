@@ -1,0 +1,76 @@
+.mine-box{
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+.tips{
+  border-top: 5px solid #eee;
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.4em;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.no-container{
+  display: flex;
+  align-items: center;
+}
+.notification{
+  width: 1.2em;
+  margin-right: 0.3em;
+}
+.nextStep{
+  width: 1em;
+}
+.no-text-box{
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: orangered; */
+  border-bottom: 5px solid #eee;
+}
+.notification-text0{
+  color: #aaa;
+}
+.notification-text{
+  color: #aaa;
+  font-size: 0.7em;
+}
+.list-container{
+  width: 100%;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.list-item{
+  width: 25%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #aaa;
+}
+.item-img{
+  width: 25px;
+}
